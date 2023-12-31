@@ -1,0 +1,55 @@
+set nocompatible
+
+" Enable coloured codes.
+syntax on
+
+" Enable cursorline.
+set cursorline
+
+" Show line numbers.
+set number
+
+" Blinking cursor.
+set visualbell
+
+" Rendering
+set ttyfast
+
+" Enable mouse.
+set mouse=a
+
+" Plugins
+call plug#begin()
+  Plug 'preservim/nerdtree'
+call plug#end()
+
+if v:version < 802
+    packadd! dracula
+endif
+syntax enable
+colorscheme dracula
+
+" Clipboard settings.
+set clipboard+=unnamedplus
+set paste
+set go+=a
+
+let mapleader = " "
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
+nnoremap <leader>e :NERDTreeToggle<CR>
+
+" Enable auto completion menu after pressing TAB.
+set wildmenu
+
+" Make wildmenu behave like similar to Bash completion.
+set wildmode=list:longest
+
+" There are certain files that we would never want to edit with Vim.
+" Wildmenu will ignore files with these extensions.
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+" Enable Ex
+nnoremap <leader>r :Ex<CR>
