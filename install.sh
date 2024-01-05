@@ -28,6 +28,8 @@ if [ "$I3CONF" = "y" ]; then
   $cp ./dot_config/* ~/.config/
   $cp ./dot_themes/* ~/.themes/
   $cp ./dot_xinitrc ~/.xinitrc
+  $cp ./dot_tmux ~/.tmux
+  $cp ./dot_tmux.conf ~/.tmux.conf
 fi
 
 echo "Installation has been completed."
